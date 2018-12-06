@@ -1,0 +1,571 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Beluga Parser Definition XML -->
+<!-- Created By: Gawing -->
+<E2XDefinition xmlns="http://www.cargosmart.com/b2b/transformparser/e2x" ElementType="positional" RecordDelimiter="0x0d 0x0a" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<Component Name="root">
+		<Component Name="AAAAHEADER" TagIdentifier="       AAAA    " >
+			<Field Name="BU_AAAA_FILLER1" Length="16" PositionOffset="15"/>
+			<Field Name="BU_AAAA_MESSAGE_TYPE" Length="10"/>
+			<Field Name="BU_AAAA_PARTNERID" Length="15"/>
+			<Field Name="BU_AAAA_FILLER2" Length="7"/>
+			<Field Name="BU_AAAA_DATE_TIME" Length="12"/>
+			<Field Name="BU_AAAA_CTL_NUM" MetaInfo="Macro" Length="14"/>
+			<Field Name="BU_AAAA_FILLER3" Length="4"/>
+		</Component>
+		<Component Name="BU_PSA_LOOP" minOccurs="0" maxOccurs="unbounded">
+			<Component Name="BU_RECORD01" TagIdentifier="BU_RECORD01    ">
+				<Field Name="BU_RECORD01_SVC" Length="2" PositionOffset="15"/>
+				<Field Name="BU_RECORD01_VSL_CDE" Length="3"/>
+				<Field Name="BU_RECORD01_VOY" Length="3"/>
+				<Field Name="BU_RECORD01_DIR" Length="1"/>
+				<Field Name="BU_RECORD01_SEQ_NUM" Length="6"/>
+				<Field Name="BU_RECORD01_DATA_TYPE" Length="2"/>
+				<Field Name="BU_RECORD01_DATA_SEQ" Length="2"/>
+				<Field Name="BU_RECORD01_ACTION_TYPE" Length="1"/>
+				<Field Name="BU_RECORD01_BKG_NUM" Length="12"/>
+				<Field Name="BU_RECORD01_BKG_TYPE" Length="1"/>
+				<Field Name="BU_RECORD01_CGO_NATURE" Length="2"/>
+				<Field Name="BU_RECORD01_FILLER1" Length="2"/>
+				<Field Name="BU_RECORD01_FINAL_DEST" Length="3"/>
+				<Field Name="BU_RECORD01_FILLER2" Length="2"/>
+				<Field Name="BU_RECORD01_DISCHARGE_PORT" Length="3"/>
+				<Field Name="BU_RECORD01_FILLER3" Length="2"/>
+				<Field Name="BU_RECORD01_LOAD_PORT" Length="3"/>
+				<Field Name="BU_RECORD01_FILLER4" Length="2"/>
+				<Field Name="BU_RECORD01_TS_PORT" Length="3"/>
+				<Field Name="BU_RECORD01_BLOCK_CDE" Length="2"/>
+				<Field Name="BU_RECORD01_CUSTOMER_CDE" Length="14"/>
+				<Field Name="BU_RECORD01_CUSTOMER_NME" Length="35"/>
+				<Field Name="BU_RECORD01_FILLER5" Length="6"/>
+			</Component>
+			<Component Name="BU_RECORD02" TagIdentifier="BU_RECORD02    ">
+				<Field Name="BU_RECORD02_SVC" Length="2" PositionOffset="15"/>
+				<Field Name="BU_RECORD02_VSL_CDE" Length="3"/>
+				<Field Name="BU_RECORD02_VOY" Length="3"/>
+				<Field Name="BU_RECORD02_DIR" Length="1"/>
+				<Field Name="BU_RECORD02_SEQ_NUM" Length="6"/>
+				<Field Name="BU_RECORD02_DATA_TYPE" Length="2"/>
+				<Field Name="BU_RECORD02_DATA_SEQ" Length="2"/>
+				<Field Name="BU_RECORD02_ACTION_TYPE" Length="1"/>
+				<Field Name="BU_RECORD02_BKG_NUM" Length="12"/>
+				<Field Name="BU_RECORD02_ISCUST_ADDR1" Length="35"/>
+				<Field Name="BU_RECORD02_ISCUST_ADDR2" Length="35"/>
+				<Field Name="BU_RECORD02_FILLER1" Length="10"/>
+			</Component>
+			<Component Name="BU_RECORD03" TagIdentifier="BU_RECORD03    ">
+				<Field Name="BU_RECORD03_SVC" Length="2" PositionOffset="15"/>
+				<Field Name="BU_RECORD03_VSL_CDE" Length="3"/>
+				<Field Name="BU_RECORD03_VOY" Length="3"/>
+				<Field Name="BU_RECORD03_DIR" Length="1"/>
+				<Field Name="BU_RECORD03_SEQ_NUM" Length="6"/>
+				<Field Name="BU_RECORD03_DATA_TYPE" Length="2"/>
+				<Field Name="BU_RECORD03_DATA_SEQ" Length="2"/>
+				<Field Name="BU_RECORD03_ACTION_TYPE" Length="1"/>
+				<Field Name="BU_RECORD03_BKG_NUM" Length="12"/>
+				<Field Name="BU_RECORD03_CNTR_SIZETYPE" Length="4"/>
+				<Field Name="BU_RECORD03_CNTR_QUANTITY" Length="7"/>
+				<Field Name="BU_RECORD03_RF2TEMP" Length="4"/>
+				<Field Name="BU_RECORD03_TEMP_UNIT" Length="1"/>
+				<Field Name="BU_RECORD03_CNTR_STATUS" Length="1"/>
+				<Field Name="BU_RECORD03_OVERHEIGHT_IND" Length="1"/>
+				<Field Name="BU_RECORD03_OVERWIDTH_IND" Length="1"/>
+				<Field Name="BU_RECORD03_OVERLENGTH_IND" Length="1"/>
+				<Field Name="BU_RECORD03_CNTR_MAXWT" Length="5"/>
+				<Field Name="BU_RECORD03_FILLER1" Length="7"/>
+				<Field Name="BU_RECORD03_CNTR_NUM" Length="13"/>
+				<Field Name="BU_RECORD03_FILLER2" Length="35"/>
+			</Component>
+			<Component Name="BU_SPECIAL_INSTRUC_435" minOccurs="0" maxOccurs="unbounded" TagIdentifier="SPECIAL INSTRUC">
+				<Field Name="BU_SI_HANDLING_CDE" Length="3" PositionOffset="15"/>
+				<Field Name="BU_SI_HANDLING_DESC" Length="30"/>
+			</Component>
+		</Component>
+		<Component Name="ACTION" minOccurs="0" TagIdentifier="ACTION         ">
+			<Field Name="ACTIONTYPE" Length="3" PositionOffset="15"/>
+		</Component>
+		<Component Name="CANCEL" minOccurs="0" maxOccurs="99" TagIdentifier="CANCEL         ">
+			<Field Name="CANCELBOOKING" Length="30" PositionOffset="15"/>
+			<Field Name="CANCELNOTIFICATIONEMAILID" Length="30"/>
+			<Field Name="CANCELBOOKINGOFFICE" Length="3"/>
+		</Component>
+		<Component Name="EXTERNAL_REF" minOccurs="0" TagIdentifier="EXTERNAL REF   ">
+			<Field Name="CANCELEXTERNALREFTYPE" Length="2" PositionOffset="15"/>
+			<Field Name="CANCELEXTERNALREFNUMBER" Length="50"/>
+		</Component>
+		<Component Name="TRANSFER_84" minOccurs="0" TagIdentifier="TRANSFER       ">
+			<Field Name="TRANSFERFMBOOKING" Length="30" PositionOffset="15"/>
+			<Field Name="TRANSFERFMVSLVOY" Length="9"/>
+			<Field Name="TRANSFERTOBOOKING" Length="30"/>
+			<Field Name="TRANSFERTOVSLVOY" Length="9"/>
+			<Field Name="TRANSFERCOMMITMENTSTATUS" Length="1"/>
+		</Component>
+		<Component Name="TRANSFER_CNTR" minOccurs="0" maxOccurs="9" TagIdentifier="TRANSFER CNTR  ">
+			<Field Name="TRANSFERCONTAINERNUMBER" Length="12" PositionOffset="15"/>
+		</Component>
+		<Component Name="TRANSFER_OPEN" minOccurs="0" maxOccurs="9" TagIdentifier="TRANSFER OPEN  ">
+			<Field Name="TRANSFERCONTAINERSIZETYPE" Length="4" PositionOffset="15"/>
+			<Field Name="TRANSFERQTY" Length="4"/>
+		</Component>
+		<Component Name="NOTPSALOOP_300" minOccurs="0" maxOccurs="99">
+			<Component Name="SHIPMENT_300" minOccurs="0" TagIdentifier="SHIPMENT       ">
+				<Field Name="BU_SHIPMENT_ACTION_TYPE" Length="1" PositionOffset="15"/>
+				<Field Name="BU_SHIPMENT_BKG_NUM" Length="30"/>
+				<Field Name="BU_SHIPMENT_FILLER1" Length="21"/>
+				<Field Name="BU_SHIPMENT_BKG_OFFICE" Length="3"/>
+				<Field Name="BU_SHIPMENT_FILLER2" Length="3"/>
+				<Field Name="BU_SHIPMENT_BL_ISSUING_OFFICE" Length="3"/>
+				<Field Name="BU_SHIPMENT_EXPORT_DEC" Length="1"/>
+				<Field Name="BU_SHIPMENT_TRAIL" Length="1"/>
+				<Field Name="BU_SHIPMENT_SPLIT" Length="1"/>
+				<Field Name="BU_SHIPMENT_CGO_ORIGIN" Length="35"/>
+				<Field Name="BU_SHIPMENT_FILLER3" Length="8"/>
+				<Field Name="BU_SHIPMENT_CREATION_DTM" Length="12"/>
+				<Field Name="BU_SHIPMENT_CREATION_USRID" Length="8"/>
+				<Field Name="BU_SHIPMENT_LSTAMENT_DTM" Length="12"/>
+				<Field Name="BU_SHIPMENT_LSTAMENT_USRID" Length="8"/>
+				<Field Name="BU_SHIPMENT_CHECK_DIGIT" Length="1"/>
+				<Field Name="BU_SHIPMENT_BKG_OFFICE_NME" Length="35"/>
+				<Field Name="BU_SHIPMENT_CARRIER" Length="3"/>
+				<Field Name="BU_SHIPMENT_EXTERNALOBJECTID" Length="23"/>
+				<Field Name="BU_SHIPMENT_OBTERM" Length="8"/>
+				<Field Name="BU_SHIPMENT_IBTERM" Length="8"/>
+				<Field Name="DOORPICKUP" Length="1"/>
+				<Field Name="DOORPICKUPDTM" Length="12"/>
+				<Field Name="DOORDELIVERY" Length="1"/>
+			</Component>
+			<Component Name="BU_EMPTY_DESP" minOccurs="0" maxOccurs="99" TagIdentifier="BU EMPTY DESP  ">
+				<Field Name="BU_EMPTYDESP_DESPATCH_SEQNO" Length="3" PositionOffset="15"/>
+				<Field Name="BU_EMPTYDESP_FILLER1" Length="3"/>
+				<Field Name="BU_EMPTYDESP_PICKUPLOCCDE" Length="5"/>
+				<Field Name="BU_EMPTYDESP_COUNTPICKUP" Length="5"/>
+				<Field Name="BU_EMPTYDESP_FILLER2" Length="1"/>
+				<Field Name="BU_EMPTYDESP_CNTR_SIZETYPE" Length="4"/>
+				<Field Name="BU_EMPTYDESP_FILLER3" Length="468" />
+			</Component>
+			<Component Name="TRANSFER_84" minOccurs="0" TagIdentifier="TRANSFER       ">
+				<Field Name="TRANSFERFMBOOKING" Length="30" PositionOffset="15"/>
+				<Field Name="TRANSFERFMVSLVOY" Length="9"/>
+				<Field Name="TRANSFERTOBOOKING" Length="30"/>
+				<Field Name="TRANSFERTOVSLVOY" Length="9"/>
+				<Field Name="TRANSFERCOMMITMENTSTATUS" Length="1"/>
+			</Component>
+			<Component Name="CUSTOMER_300" minOccurs="0" maxOccurs="16"  TagIdentifier="CUSTOMER       ">
+				<Field Name="CUSTOMERTYPE" Length="2" PositionOffset="15"/>
+				<Field Name="CUSTOMERNAME" Length="35"/>
+				<Field Name="CUSTOMERCODE" Length="14"/>
+				<Field Name="CONTACTPERSON" Length="35"/>
+				<Field Name="CONTACTPERSONPHONENUMBER" Length="21"/>
+				<Field Name="SALESOFFICECODE" Length="3"/>
+				<Field Name="CONTACTPERSONFACSIMILE" Length="21"/>
+				<Field Name="ADDRESS_1" Length="35"/>
+				<Field Name="ADDRESS_2" Length="35"/>
+				<Field Name="ADDRESS_3" Length="35"/>
+				<Field Name="CITY" Length="25"/>
+				<Field Name="STATE" Length="35"/>
+				<Field Name="ADDRESSEXTENDED" Length="125" />
+			</Component>
+			<Component Name="EXTERNALREF" minOccurs="0" maxOccurs="99" TagIdentifier="EXTERNAL REF   ">
+				<Field Name="EXTERNALREFTYPE" Length="2" PositionOffset="15"/>
+				<Field Name="EXTERNALREFNUMBER" Length="50"/>
+			</Component>
+			<Component Name="LEGALDOC" minOccurs="0" TagIdentifier="LEGAL DOC      ">
+				<Field Name="LEGALDOCTYPE" Length="2" PositionOffset="15"/>
+				<Field Name="LEGALDOCREQUIRED" Length="1"/>
+				<Field Name="LEGALDOCRECEIVED" Length="1"/>
+			</Component>
+			<Component Name="CNTRGRP_300" minOccurs="0" maxOccurs="unbounded">
+				<Component Name="CONTAINER" minOccurs="0" TagIdentifier="CONTAINER GRP  ">
+					<Field Name="CONTAINERGRPSIZETYPE" Length="4" PositionOffset="15"/>
+					<Field Name="CONTAINERGRPQTY" Length="4"/>
+					<Field Name="CONTAINERGRPAVGCARGOGROSSWT" Length="12"/>
+					<Field Name="CONTAINERGRPAVGCARGONETWEIGHT" Length="12"/>
+					<Field Name="CONTAINERGRPCARGOGROSSWTUT" Length="1"/>
+					<Field Name="CONTAINERGRPSHIPPEROWNED" Length="1"/>
+					<Field Name="CONTAINERGRPSUBEQPTYPE" Length="4"/>
+					<Field Name="CONTAINERGRPDESCRIPTION" Length="40"/>
+				</Component>
+				<Component Name="OBDORRGRP_300" minOccurs="0" maxOccurs="9">
+					<Component Name="OBDOORGRP" minOccurs="0"  TagIdentifier="O/B DOOR       ">
+						<Field Name="BU_OBDOOR_FACILITY" Length="5" PositionOffset="15"/>
+						<Field Name="BU_OBDOOR_FACILITYNME" Length="35"/>
+						<Field Name="BU_OBDOOR_FACILITYADDR" Length="180" />
+						<Field Name="BU_OBDOOR_PICKUPDTM" Length="12"/>
+						<Field Name="BU_OBDOOR_RETURN_FACILITY" Length="5"/>
+						<Field Name="BU_OBDOOR_FILLER1" Length="272" />
+						<Field Name="BU_OBDOOR_DROPPULL" Length="1"/>
+						<Field Name="BU_OBDOOR_HAULAGE" Length="1"/>
+					</Component>
+					<Component Name="OBAPPOINTMENT_300" minOccurs="0" TagIdentifier="APPOINTMENT    ">
+						<Field Name="OBAPPOINTMENTADDRESS" Length="120" PositionOffset="15" />
+						<Field Name="OBAPPOINTMENTDTM" Length="12"/>
+						<Field Name="OBPICKUPSTREET" Length="100"/>
+						<Field Name="OBPICKUPCITY" Length="60"/>
+						<Field Name="OBPICKUPSTATE" Length="35"/>
+						<Field Name="OBPICKUPCOUNTRY" Length="35"/>
+						<Field Name="OBAPPOINTMENTCONTACTNAME" Length="70"/>
+						<Field Name="OBAPPOINTMENTCONTACTPHONE" Length="30"/>
+						<Field Name="OBAPPOINTMENTADDEXTENDED" Length="100"/>
+					</Component>
+				</Component>
+				<Component Name="INTERMODAL_300" minOccurs="0" TagIdentifier="INTERMODAL     ">
+					<Field Name="BU_INTERMODALCNTR_ORI_CITYNME1" Length="35" PositionOffset="15"/>
+					<Field Name="BU_INTERMODALCNTR_ORI_CITYCDE" Length="3"/>
+					<Field Name="DESTINATIONCITYQSKEY" Length="10"/>
+					<Field Name="BU_INTERMODALCNTR_FS_LOCNME" Length="35"/>
+					<Field Name="BU_INTERMODALCNTR_FS_LOCCDE" Length="5"/>
+					<Field Name="INTERMODALCNTR_CGO_RECEIPTDTM" Length="12"/>
+					<Field Name="BU_INTERMODALCNTR_POLNME" Length="35"/>
+					<Field Name="BU_INTERMODALCNTR_POLCDE" Length="3"/>
+					<Field Name="BU_INTERMODALCNTR_VOY" Length="11"/>
+					<Field Name="BU_INTERMODALCNTR_BLOCK_NUM" Length="1"/>
+					<Field Name="BU_INTERMODALCNTR_TS_PORTNME" Length="35"/>
+					<Field Name="BU_INTERMODALCNTR_TS_PORTCDE" Length="3"/>
+					<Field Name="BU_INTERMODALCNTR_TS_PORTSVC" Length="3"/>
+					<Field Name="BU_INTERMODALCNTR_TS_VSLCDE" Length="3"/>
+					<Field Name="BU_INTERMODALCNTR_TS_VOY" Length="3"/>
+					<Field Name="BU_INTERMODALCGO_TS_DIR" Length="2"/>
+					<Field Name="BU_INTERMODALCNTR_TS_BLOCKNUM" Length="1"/>
+					<Field Name="BU_INTERMODALCNTR_PODNME" Length="35"/>
+					<Field Name="BU_INTERMODALCNTR_PODCDE" Length="3"/>
+					<Field Name="IBCFSLOCATIONNAME" Length="35"/>
+					<Field Name="IBCFSLOCATIONCODE" Length="5"/>
+					<Field Name="BU_INTERMODALCNTR_DEST_CITYNME" Length="35"/>
+					<Field Name="BU_INTERMODALCNTR_DEST_CITYCDE" Length="3"/>
+					<Field Name="ORIGINCITYQSKEY" Length="10"/>
+					<Field Name="IBCUSTOMSLOCATIONNAME" Length="35"/>
+					<Field Name="IBCUSTOMSLOCATIONCODE" Length="5"/>
+					<Field Name="CONTAINERLPORTLATEARRDTM" Length="12"/>
+					<Field Name="BU_INTERMODALCNTR_LPORT_DEPDTM" Length="12"/>
+					<Field Name="CONTAINERTSPORTLATEARRDTM" Length="12"/>
+					<Field Name="CONTAINERTSPORTLATEDEPDTM" Length="12"/>
+					<Field Name="BU_INTERMODALCNTR_DPORTARRDTM" Length="12"/>
+					<Field Name="CONTAINERDPORTLATEDEPDTM" Length="12"/>
+					<Field Name="INTERMODALCNTR_LPVSL_OPERATOR" Length="4"/>
+					<Field Name="LPVESSELNAME" Length="35"/>
+					<Field Name="TSPVESSELOPERATOR" Length="4"/>
+					<Field Name="TSPVESSELNAME" Length="35"/>
+					<Field Name="BU_INTERMODALCNTR_ORI_MFKEY" Length="35"/>
+					<Field Name="BU_INTERMODALCNTR_DEST_MFKEY" Length="35"/>
+					<Field Name="BU_INTERMODALCNTR_ORI_CITYNME2" Length="100"/>
+					<Field Name="BU_INTERMODALCNTR_DEST_CITYNME2" Length="100"/>
+				</Component>
+				<Component Name="BU_BIAS" minOccurs="0" TagIdentifier="BIAS           ">
+					<Field Name="BU_BIAS_FILLER1" Length="35" PositionOffset="15"/>
+					<Field Name="BU_BIAS_FACILITYCDE" Length="5"/>
+					<Field Name="BU_BIAS_FILLER2" Length="104" />
+					<Field Name="BU_BIAS_TRANSTYPE" Length="5"/>
+				</Component>
+				<Component Name="IBDOORGRP" minOccurs="0" maxOccurs="9">
+					<Component Name="IBDOOR" TagIdentifier="I/B DOOR       " >
+						<Field Name="BU_IBDOOR_FILLER1" Length="220" PositionOffset="15" />
+						<Field Name="BU_IBDOOR_DESTINATIONDTM" Length="12"/>
+						<Field Name="BU_IBDOOR_FILLER2" Length="278" />
+						<Field Name="BU_IBDOOR_HAULAGE" Length="1"/>
+					</Component>
+					<Component Name="OBAPPOINTMENT" minOccurs="0" TagIdentifier="APPOINTMENT    ">
+						<Field Name="OBAPPOINTMENTADDRESS" Length="120" PositionOffset="15" />
+						<Field Name="OBAPPOINTMENTDTM" Length="12"/>
+						<Field Name="OBPICKUPSTREET" Length="100"/>
+						<Field Name="OBPICKUPCITY" Length="60"/>
+						<Field Name="OBPICKUPSTATE" Length="35"/>
+						<Field Name="OBPICKUPCOUNTRY" Length="35"/>
+						<Field Name="OBAPPOINTMENTCONTACTNAME" Length="70"/>
+						<Field Name="OBAPPOINTMENTCONTACTPHONE" Length="30"/>
+					</Component>
+				</Component>
+				<Component Name="CONTAINERR" minOccurs="0" maxOccurs="99" TagIdentifier="CONTAINER      ">
+					<Field Name="BU_CNTR_INTREFNUM" Length="7" PositionOffset="15"/>
+					<Field Name="BU_CNTR_CNTRNUM" Length="10"/>
+					<Field Name="BU_CNTR_CHECKDIGIT" Length="2"/>
+					<Field Name="BU_CNTR_FILLER1" Length="2"/>
+					<Field Name="BU_CNTR_COMMITMENT_STATUS" Length="1"/>
+					<Field Name="BU_CNTR_FILLER2" Length="17"/>
+					<Field Name="BU_CNTR_STOWAGEINST" Length="20"/>
+				</Component>
+				<Component Name="REMARKS_444" minOccurs="0" maxOccurs="99" TagIdentifier="REMARKS        ">
+					<Field Name="REMARKSTYPE" Length="2" PositionOffset="15"/>
+					<Field Name="REMARKSCONTENT" Length="200" />
+				</Component>
+				<Component Name="BU_SPECIAL_INSTRUC_435" minOccurs="0" maxOccurs="unbounded" TagIdentifier="SPECIAL INSTRUC">
+					<Field Name="BU_SI_HANDLING_CDE" Length="3" PositionOffset="15"/>
+					<Field Name="BU_SI_HANDLING_DESC" Length="30"/>
+				</Component>
+				<Component Name="MEMO_445" minOccurs="0" maxOccurs="9" TagIdentifier="MEMO           ">
+					<Field Name="MEMOUSERID" Length="8" PositionOffset="15"/>
+					<Field Name="MEMOCREATIONDTM" Length="12"/>
+					<Field Name="MEMOCONTENT" Length="200" />
+				</Component>
+			</Component>
+			<Component Name="CARTO_GROUP" minOccurs="0" maxOccurs="unbounded">
+				<Component Name="CARGO" minOccurs="0" TagIdentifier="CARGO          ">
+					<Field Name="CARGOINTREFNUMBER" Length="7" PositionOffset="15"/>
+					<Field Name="CARGODESCRIPTION" Length="35"/>
+					<Field Name="CARGOGILLER1" Length="25"/>
+					<Field Name="CARGONATURE" Length="2"/>
+					<Field Name="CARGOCOMMODITY" Length="40"/>
+					<Field Name="CARGOCOMMODITYGROUP" Length="3"/>
+					<Field Name="CARGOWEIGHT" Length="8"/>
+					<Field Name="CARGOWEIGHTUNIT" Length="1"/>
+					<Field Name="CARGOTRAFFICMODE" Length="2"/>
+					<Field Name="CARGOLADINGQTY" Length="7"/>
+					<Field Name="CARGOLADINGQTYQUAL" Length="3"/>
+					<Field Name="CARGOVOLUME" Length="5"/>
+					<Field Name="CARGOVOLUMEQUAL" Length="3"/>
+					<Field Name="CARGOGROSSWEIGHT" Length="8"/>
+					<Field Name="CARGOGROSSWEIGHTUNIT" Length="1"/>
+				</Component>
+				<Component Name="T_BU_LCL" minOccurs="0" TagIdentifier="LCL            ">
+					<Field Name="BU_LCL_PKGCOUNT" Length="7" PositionOffset="15"/>
+					<Field Name="BU_LCL_PKGUNIT" Length="3"/>
+					<Field Name="BU_LCL_MEASUREMENT_VALUE" Length="5"/>
+					<Field Name="BU_LCL_MEASUREMENT_UNIT" Length="3"/>
+					<Field Name="BU_LCL_DESCRIPTION" Length="60"/>
+					<Field Name="BU_LCL_FILLER1" Length="4"/>
+					<Field Name="BU_LCL_COMMITMENT_STATUS" Length="1"/>
+				</Component>
+				<Component Name="T_BU_INTERMODAL_CGO" minOccurs="0" TagIdentifier="INTERMODAL CGO ">
+					<Field Name="BU_INTERMODALCGO_ORI_CITYNME" Length="35" PositionOffset="15"/>
+					<Field Name="BU_INTERMODALCGO_ORI_CITYCDE" Length="3"/>
+					<Field Name="BU_INTERMODALCGO_FS_LOCNME" Length="35"/>
+					<Field Name="BU_INTERMODALCGO_FS_LOCCDE" Length="5"/>
+					<Field Name="INTERMODALCGO_CGO_RECEIPTDTM" Length="12"/>
+					<Field Name="BU_INTERMODALCGO_POLNME" Length="35"/>
+					<Field Name="BU_INTERMODALCGO_POLCDE" Length="3"/>
+					<Field Name="BU_INTERMODALCGO_SVC" Length="2"/>
+					<Field Name="BU_INTERMODALCGO_VSL_CDE" Length="3"/>
+					<Field Name="BU_INTERMODALCGO_VOY" Length="3"/>
+					<Field Name="BU_INTERMODALCGO_DIR" Length="1"/>
+					<Field Name="BU_INTERMODALCGO_BLOCK_NUM" Length="1"/>
+					<Field Name="BU_INTERMODALCGO_TS_PORTNME" Length="35"/>
+					<Field Name="BU_INTERMODALCGO_TS_PORTCDE" Length="3"/>
+					<Field Name="BU_INTERMODALCGO_TS_PORTSVC" Length="2"/>
+					<Field Name="BU_INTERMODALCGO_TS_VSLCDE" Length="3"/>
+					<Field Name="BU_INTERMODALCGO_TS_VOY" Length="3"/>
+					<Field Name="BU_INTERMODALCGO_TS_DIR" Length="1"/>
+					<Field Name="BU_INTERMODALCGO_TS_BLOCKNUM" Length="1"/>
+					<Field Name="BU_INTERMODALCGO_PODNME" Length="35"/>
+					<Field Name="BU_INTERMODALCGO_PODCDE" Length="3"/>
+					<Field Name="BU_INTERMODALCGO_FILLER1" Length="40"/>
+					<Field Name="BU_INTERMODALCGO_DEST_CITYNME" Length="35"/>
+					<Field Name="BU_INTERMODALCGO_DEST_CITYCDE" Length="3"/>
+					<Field Name="BU_INTERMODALCGO_FILLER2" Length="190" />
+					<Field Name="BU_INTERMODALCGO_ORI_MFKEY" Length="35"/>
+					<Field Name="BU_INTERMODALCGO_DEST_MFKEY" Length="37"/>
+				</Component>
+				<Component Name="T_BU_BIAS" minOccurs="0" TagIdentifier="BIAS           ">
+					<Field Name="BU_BIAS_FILLER1" Length="35" PositionOffset="15"/>
+					<Field Name="BU_BIAS_FACILITYCDE" Length="5"/>
+					<Field Name="BU_BIAS_FILLER2" Length="104" />
+					<Field Name="BU_BIAS_TRANSTYPE" Length="5"/>
+				</Component>
+				<Component Name="REMARKS_444" minOccurs="0" maxOccurs="99" TagIdentifier="REMARKS        ">
+					<Field Name="REMARKSTYPE" Length="2" PositionOffset="15"/>
+					<Field Name="REMARKSCONTENT" Length="200" />
+				</Component>
+				<Component Name="BU_SPECIAL_INSTRUC_435" minOccurs="0" TagIdentifier="SPECIAL INSTRUC">
+					<Field Name="BU_SI_HANDLING_CDE" Length="3" PositionOffset="15"/>
+					<Field Name="BU_SI_HANDLING_DESC" Length="30"/>
+				</Component>
+				<Component Name="MEMO_445" minOccurs="0" maxOccurs="9" TagIdentifier="MEMO           ">
+					<Field Name="MEMOUSERID" Length="8" PositionOffset="15"/>
+					<Field Name="MEMOCREATIONDTM" Length="12"/>
+					<Field Name="MEMOCONTENT" Length="200" />
+				</Component>
+				<Component Name="T_BU_REEFER" minOccurs="0" TagIdentifier="REEFER         ">
+					<Field Name="BU_REEFER_TEMPVALUE" Length="5" PositionOffset="15"/>
+					<Field Name="BU_REEFER_TEMPUNIT" Length="1"/>
+					<Field Name="BU_REEFER_CNTR_USAGE" Length="2"/>
+					<Field Name="BU_REEFER_GENSETTYPE" Length="2"/>
+					<Field Name="BU_REEFER_VENTILATION_VALUE" Length="3"/>
+					<Field Name="BU_REEFER_VENTILATION_SCALE" Length="3"/>
+					<Field Name="REEFERPRECOOLING" Length="1"/>
+					<Field Name="REEFERCONTAINERPARTICULAR" Length="2"/>
+					<Field Name="REEFERCARGOOBNOXIOUS" Length="1"/>
+					<Field Name="REEFERCARGOTAINTCONTAINER" Length="1"/>
+					<Field Name="BU_REEFER_APPROVAL_REF" Length="15"/>
+					<Field Name="BU_REEFER_REMARKS" Length="180" />
+					<Field Name="REEFERCARBONDIOXIDEVALUE" Length="4"/>
+					<Field Name="REEFEROXYGENVALUE" Length="4"/>
+					<Field Name="REEFERDEHUMIDITYVALUE" Length="4"/>
+					<Field Name="REEFERTYPEVALUE" Length="50"/>
+					<Field Name="REEFERREQUIRESDEHUMIDITYVALUE" Length="50"/>
+					<Field Name="REEFERISSENSITIVECARGOVALUE" Length="5"/>
+					<Field Name="REEFERSENSITIVECARGOVALUE" Length="50"/>
+				</Component>
+				<Component Name="T_BU_DANGEROUS" minOccurs="0" maxOccurs="unbounded" TagIdentifier="DANGEROUS      ">
+					<Field Name="BU_DANGEROUS_SEQNO" Length="4" PositionOffset="15"/>
+					<Field Name="BU_DANGEROUS_SHIPPINGNME" Length="80"/>
+					<Field Name="BU_DANGEROUS_UNNUM" Length="10"/>
+					<Field Name="BU_DANGEROUS_DESCRIPTION" Length="70"/>
+					<Field Name="BU_DANGEROUS_IMCOCLASS" Length="15"/>
+					<Field Name="BU_DANGEROUS_IMCOPAGE" Length="5"/>
+					<Field Name="BU_DANGEROUS_PKG_GRP" Length="8"/>
+					<Field Name="BU_DANGEROUS_EREF_PARTY" Length="5"/>
+					<Field Name="BU_DANGEROUS_EREF_VAL" Length="15"/>
+					<Field Name="EMERGENCYRESPONSEGUIDENUMBER" Length="5"/>
+					<Field Name="PSACLASS" Length="10"/>
+					<Field Name="BU_DANGEROUS_OPKG_QTY" Length="7"/>
+					<Field Name="BU_DANGEROUS_OPKG_UNIT" Length="3"/>
+					<Field Name="BU_DANGEROUS_IPKG_QTY" Length="7"/>
+					<Field Name="BU_DANGEROUS_IPKG_UNIT" Length="3"/>
+					<Field Name="LABEL" Length="120" />
+					<Field Name="BU_DANGEROUS_LABEL1" Length="120" />
+					<Field Name="BU_DANGEROUS_LABEL2" Length="120" />
+					<Field Name="LABEL3" Length="120" />
+					<Field Name="BU_DANGEROUS_DG_NETWT" Length="8"/>
+					<Field Name="BU_DANGEROUS_DG_NETWTUNIT" Length="1"/>
+					<Field Name="BU_DANGEROUS_DG_GROSSWT" Length="8"/>
+					<Field Name="BU_DANGEROUS_DG_GROSSWTUNIT" Length="1"/>
+					<Field Name="BU_DANGEROUS_DG_MEASSUREMENT" Length="5"/>
+					<Field Name="DANGEROUS_DG_MEASSUREMENTUNIT" Length="1"/>
+					<Field Name="BU_DANGEROUS_DG_FLASHPOINT" Length="3"/>
+					<Field Name="BU_DANGEROUS_DG_FLASHPOINTUNIT" Length="1"/>
+					<Field Name="BU_DANGEROUS_EMSNUM" Length="6"/>
+					<Field Name="BU_DANGEROUS_MGAGNUM" Length="4"/>
+					<Field Name="BU_DANGEROUS_OB_CONTACTPER1" Length="20"/>
+					<Field Name="BU_DANGEROUS_OB_PHONENUM1" Length="25"/>
+					<Field Name="BU_DANGEROUS_OB_CONTACTPER2" Length="20"/>
+					<Field Name="BU_DANGEROUS_OB_PHONENUM2" Length="25"/>
+					<Field Name="BU_DANGEROUS_IB_CONTACTPER1" Length="20"/>
+					<Field Name="BU_DANGEROUS_IB_PHONENUM1" Length="25"/>
+					<Field Name="BU_DANGEROUS_IB_CONTACTPER2" Length="20"/>
+					<Field Name="BU_DANGEROUS_IB_PHONENUM2" Length="25"/>
+					<Field Name="BU_DANGEROUS_BLACKPOWDERWT" Length="8"/>
+					<Field Name="BU_DANGEROUS_BKWTUNIT" Length="1"/>
+					<Field Name="BU_DANGEROUS_MARINE_POLLUTANT" Length="1"/>
+					<Field Name="POISONOUSINHALATION" Length="1"/>
+					<Field Name="LIMITEDQUANTITY" Length="1"/>
+					<Field Name="REPORTABLEQUANTITY" Length="1"/>
+					<Field Name="EMPTYUNCLEAN" Length="1"/>
+					<Field Name="BU_DANGEROUS_DGREMARKS" Length="350" />
+					<Field Name="BU_DANGEROUS_FINAL_SHIPNME" Length="180" />
+					<Field Name="BU_DANGEROUS_TECHNICALNME" Length="120" />
+					<Field Name="DGIBCCODE" Length="50"/>
+					<Field Name="DGFUMIGANTNAME" Length="25"/>
+					<Field Name="DGDOSAGE" Length="20"/>
+					<Field Name="DGFUMIGATIONEFFDATE" Length="12"/>
+					<Field Name="DGFUMIGATIONEXPDATE" Length="12"/>
+					<Field Name="DGMARKSANDSIGN" Length="65"/>
+					<Field Name="DGERG" Length="25"/>
+					<Field Name="DGERAP" Length="25"/>
+					<Field Name="DGOUTERPKGUNITNAME" Length="30"/>
+					<Field Name="DGINNERPKGUNITNAME" Length="30"/>
+					<Field Name="DGAMENDMENT" Length="1"/>
+					<Field Name="EXTERNAL_OBJECTID" Length="23"/>
+					<Field Name="FLASHPOINT_N" Length="12"/>
+					<Field Name="FLASHPOINTUNIT_N" Length="1"/>
+					<Field Name="PROPERSHIPPINGNAMEEXTENDED" Length="20"/>
+				</Component>
+				<Component Name="T_BU_AWKWARD" minOccurs="0" TagIdentifier="AWKWARD        ">
+					<Field Name="BU_AWKWARD_HEIGHT" Length="5" PositionOffset="15"/>
+					<Field Name="BU_AWKWARD_LENGTH" Length="5"/>
+					<Field Name="BU_AWKWARD_WIDTH" Length="5"/>
+					<Field Name="BU_AWKWARD_MEASUREMENTUNIT" Length="1"/>
+					<Field Name="BU_AWKWARD_DELIVERY_TYPE" Length="30"/>
+					<Field Name="BU_AWKWARD_ESTIMATEDTEU" Length="3"/>
+					<Field Name="BU_AWKWARD_ONDECKIND" Length="1"/>
+					<Field Name="BU_AWKWARD_APPROVAL_REF" Length="15"/>
+					<Field Name="BU_AWKWARD_REMARKS" Length="180"/>
+					<Field Name="BU_AWKWARD_DESCRIPTION" Length="60"/>
+				</Component>
+			</Component>
+			<Component Name="EXT_GRP" minOccurs="0" maxOccurs="1">
+				<Component Name="EXT" minOccurs="0" maxOccurs="1" TagIdentifier="BKGEXT         ">
+					<Field Name="EXT_SEQ_ID" Length="23" PositionOffset="15"/>
+					<Field Name="EXT_TYPE" Length="15"/>
+					<Field Name="EXT_MASTER" Length="1"/>
+					<Field Name="EXT_FRT_TERMS" Length="100"/>
+					<Field Name="EXT_REMARK" Length="200"/>
+					<Field Name="EXT_PAY_OFFICE" Length="3"/>
+					<Field Name="EXT_BL_NO" Length="20"/>
+					<Field Name="EXT_numberOfOriginals" Length="3"/>
+				</Component>
+				<Component Name="EXT_GRP_PARTY" minOccurs="0" maxOccurs="unbounded" TagIdentifier="EXTCUSTOMER    ">
+					<Field Name="EXT_PARTY_SEQ_ID" Length="23" PositionOffset="15"/>
+					<Field Name="EXT_PARTY_TYPE" Length="2"/>
+					<Field Name="EXT_PARTY_NME" Length="35"/>
+					<Field Name="EXT_PARTY_CDE" Length="14"/>
+					<Field Name="EXT_PARTY_CONTACT_NME" Length="35"/>
+					<Field Name="EXT_PARTY_CONTACT_PHONE" Length="21"/>
+					<Field Name="EXT_PARTY_SALES_OFCE_CDE" Length="3"/>
+					<Field Name="EXT_PARTY_CONTACT_PERSON_FACSIMILE" Length="21"/>
+					<Field Name="EXT_PARTY_ADDR1" Length="175"/>
+					<Field Name="EXT_PARTY_city" Length="25"/>
+					<Field Name="EXT_PARTY_state" Length="35"/>
+					<Field Name="EXT_PARTY_addressExtended" Length="125"/>
+				</Component>
+				<Component Name="EXT_CNTR" minOccurs="0" maxOccurs="unbounded" TagIdentifier="EXTCNTR        ">
+					<Field Name="EXT_CNTR_TYPE" Length="4" PositionOffset="15"/>
+					<Field Name="EXT_CNTR_QUAN" Length="4"/>
+					<Field Name="EXT_CNTR_SOC" Length="1"/>
+				</Component>
+				<Component Name="EXT_CARGO_GRP" minOccurs="0" maxOccurs="unbounded">
+					<Component Name="EXT_CARGO" minOccurs="0" maxOccurs="1" TagIdentifier="EXTCARGO       ">
+						<Field Name="EXT_CARGO_SEQ_ID" Length="23" PositionOffset="15"/>
+						<Field Name="EXT_CARGO_EN_NME" Length="50"/>
+						<Field Name="EXT_CARGO_CN_NME" Length="50"/>
+						<Field Name="EXT_CARGO_QTY" Length="10"/>
+						<Field Name="EXT_CARGO_GROSS_WEIGHT" Length="8"/>
+						<Field Name="EXT_CARGO_GROSS_WEIGHT_UNIT" Length="1"/>
+						<Field Name="EXT_CARGO_NET_WEIGHT" Length="8"/>
+						<Field Name="EXT_CARGO_NET_WEIGHT_UNIT" Length="1"/>
+						<Field Name="EXT_CARGO_VOL_VALUE" Length="8"/>
+						<Field Name="EXT_CARGO_VOL_UNIT" Length="3"/>
+						<Field Name="EXT_CARGO_PACKAGE_CODE" Length="3"/>
+						<Field Name="EXT_CARGO_MARKS_CN" Length="200"/>
+						<Field Name="EXT_CARGO_FULL_DESC" Length="369"/>
+					</Component>
+					<Component Name="EXT_DANGEROUS" minOccurs="0" maxOccurs="1" TagIdentifier="DANGEROUS      ">
+						<Field Name="DANGEROUS_SEQNO" Length="4" PositionOffset="15"/>
+						<Field Name="DANGEROUS_SHIPPINGNME" Length="80"/>
+						<Field Name="DANGEROUS_UNNUM" Length="10"/>
+						<Field Name="DANGEROUS_DESCRIPTION" Length="70"/>
+						<Field Name="DANGEROUS_IMCOCLASS" Length="15"/>
+						<Field Name="DANGEROUS_IMCOPAGE" Length="5"/>
+						<Field Name="DANGEROUS_PKG_GRP" Length="8"/>
+						<Field Name="DANGEROUS_EREF_PARTY" Length="5"/>
+						<Field Name="DANGEROUS_EREF_VAL" Length="15"/>
+						<Field Name="DANGEROUS_PSACLASS" Length="15"/>
+						<Field Name="DANGEROUS_OPKG_QTY" Length="7"/>
+						<Field Name="DANGEROUS_OPKG_UNIT" Length="3"/>
+						<Field Name="DANGEROUS_IPKG_QTY" Length="7"/>
+						<Field Name="DANGEROUS_IPKG_UNIT" Length="3"/>
+						<Field Name="DANGEROUS_LABEL1" Length="120"/>
+						<Field Name="DANGEROUS_LABEL2" Length="120"/>
+						<Field Name="DANGEROUS_FILLER1" Length="240"/>
+						<Field Name="DANGEROUS_DG_NETWT" Length="8"/>
+						<Field Name="DANGEROUS_DG_NETWTUNIT" Length="1"/>
+						<Field Name="DANGEROUS_DG_GROSSWT" Length="8"/>
+						<Field Name="DANGEROUS_DG_GROSSWTUNIT" Length="1"/>
+						<Field Name="DANGEROUS_DG_MEASSUREMENT" Length="5"/>
+						<Field Name="DANGEROUS_DG_MEASSUREMENTUNIT" Length="1"/>
+						<Field Name="DANGEROUS_DG_FLASHPOINT" Length="3"/>
+						<Field Name="DANGEROUS_DG_FLASHPOINTUNIT" Length="1"/>
+						<Field Name="DANGEROUS_EMSNUM" Length="6"/>
+						<Field Name="DANGEROUS_MGAGNUM" Length="4"/>
+						<Field Name="DANGEROUS_OB_CONTACTPER1" Length="20"/>
+						<Field Name="DANGEROUS_OB_PHONENUM1" Length="25"/>
+						<Field Name="DANGEROUS_OB_CONTACTPER2" Length="20"/>
+						<Field Name="DANGEROUS_OB_PHONENUM2" Length="25"/>
+						<Field Name="DANGEROUS_IB_CONTACTPER1" Length="20"/>
+						<Field Name="DANGEROUS_IB_PHONENUM1" Length="25"/>
+						<Field Name="DANGEROUS_IB_CONTACTPER2" Length="20"/>
+						<Field Name="DANGEROUS_IB_PHONENUM2" Length="25"/>
+						<Field Name="DANGEROUS_BLACKPOWDERWT" Length="8"/>
+						<Field Name="DANGEROUS_BKWTUNIT" Length="1"/>
+						<Field Name="DANGEROUS_MARINE_POLLUTANT" Length="1"/>
+						<Field Name="DANGEROUS_FILLER2" Length="4"/>
+						<Field Name="DANGEROUS_DGREMARKS" Length="350"/>
+						<Field Name="DANGEROUS_FINAL_SHIPNME" Length="180"/>
+						<Field Name="DANGEROUS_TECHNICALNME" Length="120"/>
+						<Field Name="DANGEROUS_SEQ_ID" Length="23"/>
+					</Component>
+				</Component>
+			</Component>
+
+		</Component>
+		<Component Name="TRAILER" minOccurs="0" TagIdentifier="TRAILER        ">
+			<Field Name="T999BATCHNUMBER" Length="14" MetaInfo="Macro" PositionOffset="15"/>
+		</Component>
+	</Component>
+</E2XDefinition>
