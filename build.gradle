@@ -80,8 +80,8 @@ task buildDocker(type: Docker, dependsOn: build) {
     doFirst {
         copy {
             from bootJar
-//            into "${stageDir}/target" //must match with Dockerfile
-            into "${stageDir}" //must match with Dockerfile
+            into "${stageDir}/target" //must match with Dockerfile
+//            into "${stageDir}" //must match with Dockerfile
         }
     }
 }
