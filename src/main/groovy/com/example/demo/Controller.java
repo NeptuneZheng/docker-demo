@@ -22,6 +22,6 @@ public class Controller {
     @RequestMapping(value = "/hello",method = RequestMethod.GET)
     @ResponseBody
     public String sayHello(){
-        return "Hello my friend 666";
+        return "this is a new face";
     }
 }
