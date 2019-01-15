@@ -9,7 +9,6 @@ IMAGE_NAME="zhengne/$APP_NAME:$BUILD_NUMBER"
 echo $IMAGE_NAME
 
 docker build -t $IMAGE_NAME .
-docker tag demo/docker-demo:1.0.0 $IMAGE_NAME
 docker push $IMAGE_NAME
 
 echo "===================="
